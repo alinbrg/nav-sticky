@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="img-section">
+    <h1>A story about getting lost</h1>
+  </section>
+  <section class="nav-section">
+    <span class="logo">
+      Alin
+    </span>
+    <nav id="main">
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#images">IMAGES</a></li>
+        <li><a href="#">LOCATIONS</a></li>
+        <li><a href="#">MAPS</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section id="about">
+    <div class="about-us">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, consequatur alias consequuntur fugit quaerat suscipit facere dolore vero. Eos, unde?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur repudiandae perspiciatis sunt quae nobis dolorum quibusdam, ex culpa nisi libero voluptatem ea, modi, est exercitationem temporibus dicta. Asperiores saepe alias assumenda illo suscipit maxime dolor molestiae dolore obcaecati, vel odit minima magni deserunt inventore corporis optio reprehenderit, est dolores laudantium?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt illo culpa voluptatibus fuga nam mollitia assumenda alias illum fugiat, labore odio, odit tempore quas a.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, consequatur alias consequuntur fugit quaerat suscipit facere dolore vero. Eos, unde?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur repudiandae perspiciatis sunt quae nobis dolorum quibusdam, ex culpa nisi libero voluptatem ea, modi, est exercitationem temporibus dicta. Asperiores saepe alias assumenda illo suscipit maxime dolor molestiae dolore obcaecati, vel odit minima magni deserunt inventore corporis optio reprehenderit, est dolores laudantium?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt illo culpa voluptatibus fuga nam mollitia assumenda alias illum fugiat, labore odio, odit tempore quas a.
+      </p>
+    </div>
+  </section>
+
+  <section id="images">
+    <div class="images-container">
+      <div>
+        <img
+       src="img/amsterdam.jpg" alt="amsterdam">
+      </div>
+      <div>
+        <img src="img/maastricht.jpg" alt="maastricht">
+      </div>
+      <div>
+        <img src="img/paris.jpg" alt="paris">
+      </div>
+      <div>
+        <img src="img/monschau.jpg" alt="monschau">
+      </div>
+    </div>
+  </section>
+
+  <section id="locations">
+
+  </section>
+  <section id="maps">
+
+  </section>
+
+
+
+  <script>
+
+  const nav = document.querySelector('.nav-section');
+  let logo = document.querySelector('.logo');
+  let topOfNav = nav.offsetTop;  // in this case its same as window.innerHeight
+  topOfNav = window.innerHeight;
+
+  function fixNav(){
+    if(window.scrollY >= topOfNav){
+      //add padding top to fix extra space after nav is fixed
+      document.body.style.paddingTop = nav.offsetHeight + 'px';
+      document.body.classList.add('fixed-nav');
+    } else{
+      document.body.style.paddingTop = 0;
+      document.body.classList.remove('fixed-nav');
+    }
+  }
+
+  window.addEventListener('scroll', fixNav);
+  </script>
+</body>
+</html>
